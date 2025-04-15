@@ -225,13 +225,13 @@ const Navbar = () => {
       <div
         className={`fixed md:hidden w-[65%] font-['poppins']  sm:w-[45%] ${
           isOpen ? "h-[15vh] pt-2" : "h-0"
-        } bg-[#00000048] backdrop-blur-lg duration-700 overflow-hidden rounded-lg left-1/2 -translate-x-1/2 bottom-3 z-[2] text-white`}
+        } bg-[#00000048] backdrop-blur-lg duration-700 flex  justify-center overflow-hidden rounded-lg left-1/2 -translate-x-1/2 bottom-3 z-[2] text-white`}
       >
         {["Home", "Playlist", "Artist", "Explore"].map((item, idx) => (
           <Link
             key={idx}
             to={`${idx === 0 ? "/" : `/${item.toLowerCase()}`}`}
-            className={`px-2 text-sm uppercase md:hidden`}
+            className={`px-2 max-sm:text-xs text-sm uppercase md:hidden`}
             onClick={(e) => e.stopPropagation()}
           >
             {item}

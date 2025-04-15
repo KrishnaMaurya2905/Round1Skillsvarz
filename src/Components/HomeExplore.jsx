@@ -1,18 +1,13 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
-// import {
-//   EffectComposer,
-//   ChromaticAberration,
-//   Vignette,
-// } from "@react-three/postprocessing";
+
 import BendingPlane from "./BendingPlane";
 import useResponsiveRadius from "../utils/useResponsiveRadius";
 import Paragraph from "./Paragraph";
 import Button from "./Button";
 import { BsArrow90DegRight } from "react-icons/bs";
 
-// Group of planes controlled by scroll and mouse
 function ScrollControlledGroup({ isVisible, containerRef }) {
   const groupRef = useRef();
   const targetRotation = useRef(0);
@@ -163,9 +158,9 @@ export default function HomeExplore() {
       <Canvas
         style={{
           width: "96%",
-          height: "100%",
+          height: "100vh",
           overflow: "hidden",
-          backgroundColor: "black",
+          backgroundColor: "transparent",
           borderRadius: "12px",
         }}
         camera={{ position: [0, -0.5, 10] }}
@@ -173,12 +168,6 @@ export default function HomeExplore() {
         <ambientLight intensity={1.5} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
         <ScrollControlledGroup isVisible={isVisible} containerRef={homeRef} />
-        {/* {radius > 5.1 && (
-          <EffectComposer>
-            <ChromaticAberration offset={[0.001, 0.002]} />
-            <Vignette offset={0.4} darkness={1.3} eskil={false} />
-          </EffectComposer>
-        )} */}
       </Canvas>
     </div>
   );

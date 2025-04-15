@@ -1,11 +1,11 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useRef, useEffect, useState } from "react";
 import * as THREE from "three";
-import {
-  EffectComposer,
-  ChromaticAberration,
-  Vignette,
-} from "@react-three/postprocessing";
+// import {
+//   EffectComposer,
+//   ChromaticAberration,
+//   Vignette,
+// } from "@react-three/postprocessing";
 import BendingPlane from "./BendingPlane";
 import useResponsiveRadius from "../utils/useResponsiveRadius";
 import Paragraph from "./Paragraph";
@@ -173,12 +173,12 @@ export default function HomeExplore() {
         <ambientLight intensity={1.5} />
         <directionalLight position={[2, 2, 2]} intensity={1} />
         <ScrollControlledGroup isVisible={isVisible} containerRef={homeRef} />
-        {radius > 5.1 && (
+        {/* {radius > 5.1 && (
           <EffectComposer>
             <ChromaticAberration offset={[0.001, 0.002]} />
             <Vignette offset={0.4} darkness={1.3} eskil={false} />
           </EffectComposer>
-        )}
+        )} */}
       </Canvas>
     </div>
   );
